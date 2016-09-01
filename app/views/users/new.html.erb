@@ -16,7 +16,7 @@
 </body>
 </html>
 
-<% end %>
+<!- Railsy Forms with #form_tag ->
 
 <!DOCTYPE html>
 <html>
@@ -32,6 +32,25 @@
     <%= label_tag 'password', 'Password: ' %>
     <%= password_field_tag 'password' %><br>
     <%= submit_tag "Submit" %>
+  <% end %>
+</body>
+</html>
+
+<% end %>
+
+<!- Railsy-er Forms with #form_for ->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign up</title>
+</head>
+<body>
+  <%= form_for :user, url: users_path do |f| %>
+    Username: <%= f.text_field :username, value: "Your user name here" %><br>
+    Email:    <%= f.text_field :email, value: "Your email here"%><br>
+    Password: <%= f.password_field :password %><br>
+    <%= f.submit %>
   <% end %>
 </body>
 </html>
