@@ -1,3 +1,6 @@
+<!- HTML Form ->
+<% if false %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,5 +13,25 @@
     Email:    <input type="text" name="user[:email]"><br>
     Password: <input type="passowrd" name="user[:password]"><br>
     <input type="submit" value="Submit">
+</body>
+</html>
+
+<% end %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign up</title>
+</head>
+<body>
+  <%= form_tag(users_path) do %>
+    <%= label_tag 'username', 'Username: ' %>
+    <%= text_field_tag 'username' %><br>
+    <%= label_tag 'email', 'Email: ' %>
+    <%= text_field_tag 'email' %><br>
+    <%= label_tag 'password', 'Password: ' %>
+    <%= password_field_tag 'password' %><br>
+    <%= submit_tag "Submit" %>
+  <% end %>
 </body>
 </html>
