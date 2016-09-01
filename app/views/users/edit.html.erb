@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign up</title>
+</head>
+<body>
+  <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+  
+  <%= form_for :user, url: users_path do |f| %>
+    Username: <%= f.text_field :username, value: "Your new user name here" %><br>
+    Email:    <%= f.text_field :email, value: "Your new email here"%><br>
+    Password: <%= f.password_field :password %><br>
+    <%= f.submit %>
+  <% end %>
+</body>
+</html>
